@@ -4,6 +4,7 @@ import { EmailForm } from "@/types/type"
 import {
   Box,
   Button,
+  Center,
   Flex,
   FormControl,
   HStack,
@@ -118,77 +119,110 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <MainLayout bg={"brand.100"} color={"brand.300"}>
-        <HStack h={28} mb={20}>
-          <Heading fontSize={"3xl"} fontWeight={"extrabold"}>
-            HY
-          </Heading>
-          <Spacer />
-          <Icon as={RxHamburgerMenu} boxSize={"9"}></Icon>
-        </HStack>
-        <Flex alignItems={"center"} gap={4} mb={8}>
-          <Text display={"inline"} fontSize={"xl"}>
-            01//04 -{" "}
-            <Text as={"span"} textTransform={"uppercase"}>
-              Scroll
-            </Text>{" "}
-          </Text>
-          <Icon
-            as={HiArrowSmallDown}
-            boxSize={"5"}
-            _hover={{
-              transition: "all 0.2s ease-out",
-              transform: "rotate(180deg)",
-            }}
-          />
-        </Flex>
-        <Stack spacing={8}>
-          <Flex flexDirection={"column"}>
-            <Text
-              fontSize={"6xl"}
-              textTransform={"uppercase"}
-              fontWeight={"black"}
-              mx={"auto"}
-              display={"inline-block"}
-              mb={-5}
-            >
-              Full
+      <MainLayout
+        bg={"brand.100"}
+        color={"brand.300"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Box maxW={"container.2xl"} mx={"auto"}>
+          <Flex alignItems={"center"} gap={4} mb={8} hideFrom={"lg"}>
+            <Text display={"inline"} fontSize={"xl"}>
+              01//04 -{" "}
+              <Text as={"span"} textTransform={"uppercase"}>
+                Scroll
+              </Text>{" "}
             </Text>
-            <Text
-              fontSize={"6xl"}
-              textTransform={"uppercase"}
-              fontWeight={"black"}
-              mx={"auto"}
-              mb={-5}
+            <Icon
+              as={HiArrowSmallDown}
+              boxSize={"5"}
+              _hover={{
+                transition: "all 0.2s ease-out",
+                transform: "rotate(180deg)",
+              }}
+            />
+          </Flex>
+          <Flex gap={8} direction={{ base: "column", xl: "row" }}>
+            <Flex
+              alignItems={"center"}
+              gap={4}
+              mb={8}
+              alignSelf={"start"}
+              hideBelow={"lg"}
             >
-              Stack
-            </Text>
-            <Text
-              fontSize={"6xl"}
-              textTransform={"uppercase"}
-              fontWeight={"black"}
-              mx={"auto"}
+              <Text display={"inline"} fontSize={"xl"}>
+                01//04 -{" "}
+                <Text as={"span"} textTransform={"uppercase"}>
+                  Scroll
+                </Text>{" "}
+              </Text>
+              <Icon
+                as={HiArrowSmallDown}
+                boxSize={"5"}
+                _hover={{
+                  transition: "all 0.2s ease-out",
+                  transform: "rotate(180deg)",
+                }}
+              />
+            </Flex>
+            <Flex
+              flexDirection={"column"}
+              alignSelf={"center"}
+              fontSize={{ base: "6xl", xl: "9xl" }}
             >
-              Developer
+              <Text
+                textTransform={"uppercase"}
+                fontWeight={"black"}
+                mx={"auto"}
+                display={"inline-block"}
+                mb={{ base: -5, xl: -14 }}
+              >
+                Versatile
+              </Text>
+              <Text
+                textTransform={"uppercase"}
+                fontWeight={"black"}
+                mx={"auto"}
+                mb={{ base: -5, xl: -14 }}
+              >
+                Creative
+              </Text>
+              <Text
+                textTransform={"uppercase"}
+                fontWeight={"black"}
+                mx={"auto"}
+              >
+                Visionary
+              </Text>
+            </Flex>
+            <Text
+              textAlign={"center"}
+              mx={"auto"}
+              fontSize={"xl"}
+              mb={16}
+              alignSelf={"end"}
+              maxW={"sm"}
+            >
+              EXPLORING BOUNDLESS CREATIVITY, I SOLVE PROBLEMS WITH PASSION,
+              FUELED BY DESIGN.
             </Text>
           </Flex>
-          <Text textAlign={"center"} mx={"auto"} fontSize={"xl"} mb={16}>
-            EXPLORING BOUNDLESS CREATIVITY, I SOLVE PROBLEMS WITH PASSION,
-            FUELED BY DESIGN.
-          </Text>
-          <CustomButton
-            borderColor={"brand.300"}
-            bg={"transparent"}
-            color={"brand.300"}
-            _hover={{
-              bg: "brand.300",
-              color: "brand.100",
-            }}
-            p={10}
-          >
-            <Icon as={HiArrowSmallDown} boxSize={"10"} />
-          </CustomButton>
-        </Stack>
+          <Center>
+            <CustomButton
+              borderColor={"brand.300"}
+              bg={"transparent"}
+              color={"brand.300"}
+              _hover={{
+                bg: "brand.300",
+                color: "brand.100",
+              }}
+              p={10}
+            >
+              <Icon as={HiArrowSmallDown} boxSize={"10"} />
+            </CustomButton>
+          </Center>
+        </Box>
       </MainLayout>
       <MainLayout bg={"brand.200"}>
         <Stack spacing={14}>
@@ -257,15 +291,7 @@ export default function Home() {
                 HERE ARE A FEW SELECTED PROJECTS THAT DEMONSTRATE MY PASSION FOR
                 CREATING MEMORABLE WEBSITES AND MOBILE APPS.
               </Text>
-              {/* <Box h={"500px"} w={"300px"} mx={"auto"}>
-            <Image
-              src="https://source.unsplash.com/random/300x500"
-              alt="random placeholder"
-              objectFit={"cover"}
-              maxW={"100%"}
-              maxH={"100%"}
-            />
-          </Box> */}
+
               <Stack mx={"auto"} textTransform={"uppercase"}>
                 <Image
                   src="https://source.unsplash.com/random/400x500"

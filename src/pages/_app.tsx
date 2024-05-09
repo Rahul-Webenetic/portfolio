@@ -1,3 +1,5 @@
+import Header from "@/components/layout/Header"
+import CustomMouse from "@/components/util/CustomMouse"
 import { theme } from "@/styles/theme"
 import {
   Box,
@@ -54,57 +56,15 @@ export default function App({ Component, pageProps }: AppProps) {
               clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
             }}
             cursor={"none"}
+            overflow={"hidden"}
           >
             <CustomMouse>
+              <Header />
               <Component {...pageProps} />
             </CustomMouse>
           </ChakraBox>
         </AnimatePresence>
       </ChakraProvider>
-    </>
-  )
-}
-
-const CustomMouse = ({ children }: { children: React.ReactNode }) => {
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0,
-  })
-
-  const mouseMove = useMotionTemplate`translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0)`
-
-  useEffect(() => {
-    const mouseMove = (e: any) => {
-      setMousePosition({
-        x: e.clientX - 14,
-        y: e.clientY - 14,
-      })
-    }
-    window.addEventListener("mousemove", mouseMove)
-
-    return () => {
-      window.removeEventListener("mousemove", mouseMove)
-    }
-  }, [])
-
-  return (
-    <>
-      <MotionBox
-        as={motion.div}
-        h={"28px"}
-        w={"28px"}
-        bg={"brand.300"}
-        position={"fixed"}
-        top={0}
-        left={0}
-        rounded={"full"}
-        style={{
-          transform: mouseMove,
-        }}
-        zIndex={50}
-        pointerEvents={"none"}
-      ></MotionBox>
-      {children}
     </>
   )
 }

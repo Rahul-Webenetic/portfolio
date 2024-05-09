@@ -15,10 +15,7 @@ export default function MainLayout({ children, ...props }: Props) {
         px={8}
         mx={"auto"}
         width={"100%"}
-        maxW={{
-          lg: "container.xl",
-          xl: "1400px",
-        }}
+        maxW={"full"}
         {...props}
       >
         {children}
