@@ -39,12 +39,13 @@ export default function App({ Component, pageProps }: AppProps) {
           <ChakraBox
             key={router.route}
             transition={{
-              duration: "0.25",
+              duration: "0.5",
+              ease: "easeOut",
             }}
             initial={{
               background: "black",
               opacity: 0,
-              clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+              clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
             }}
             animate={{
               background: "black",

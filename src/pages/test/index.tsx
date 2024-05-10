@@ -5,8 +5,10 @@ type Props = {}
 
 export default function TestPage({}: Props) {
   return (
-    <Box bg={"blanchedalmond"} w={"100vw"} h={"100vh"}>
-      TEST
-    </Box>
+    <>
+      <Box bg={"blanchedalmond"} w={"100%"} h={"100vh"}>
+        TEST
+      </Box>
+    </>
   )
 }

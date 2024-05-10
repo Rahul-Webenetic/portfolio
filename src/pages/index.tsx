@@ -25,6 +25,7 @@ import { HiArrowSmallDown } from "react-icons/hi2"
 import { RxHamburgerMenu } from "react-icons/rx"
 import { object, string } from "yup"
 import CustomToast from "@/components/util/CustomToast"
+import BubbleText from "@/components/util/BubbleText"
 
 const inputStyles = {
   p: 14,
@@ -125,9 +126,15 @@ export default function Home() {
         display={"flex"}
         justifyContent={"center"}
         alignItems={"center"}
+        pt={10}
       >
         <Box maxW={"container.2xl"} mx={"auto"}>
-          <Flex alignItems={"center"} gap={4} mb={8} hideFrom={"lg"}>
+          <Flex
+            alignItems={"center"}
+            gap={4}
+            mb={{ base: 8, md: 4 }}
+            hideFrom={"lg"}
+          >
             <Text display={"inline"} fontSize={"xl"}>
               01//04 -{" "}
               <Text as={"span"} textTransform={"uppercase"}>
@@ -143,13 +150,13 @@ export default function Home() {
               }}
             />
           </Flex>
-          <Flex gap={8} direction={{ base: "column", xl: "row" }}>
+          <Flex gap={8} direction={{ base: "column", lg: "row" }} mb={16}>
             <Flex
               alignItems={"center"}
               gap={4}
-              mb={8}
               alignSelf={"start"}
               hideBelow={"lg"}
+              minW={"max-content"}
             >
               <Text display={"inline"} fontSize={"xl"}>
                 01//04 -{" "}
@@ -166,43 +173,26 @@ export default function Home() {
                 }}
               />
             </Flex>
-            <Flex
-              flexDirection={"column"}
-              alignSelf={"center"}
-              fontSize={{ base: "6xl", xl: "9xl" }}
-            >
-              <Text
-                textTransform={"uppercase"}
-                fontWeight={"black"}
-                mx={"auto"}
-                display={"inline-block"}
-                mb={{ base: -5, xl: -14 }}
-              >
-                Versatile
-              </Text>
-              <Text
-                textTransform={"uppercase"}
-                fontWeight={"black"}
-                mx={"auto"}
-                mb={{ base: -5, xl: -14 }}
-              >
-                Creative
-              </Text>
-              <Text
-                textTransform={"uppercase"}
-                fontWeight={"black"}
-                mx={"auto"}
-              >
-                Visionary
-              </Text>
-            </Flex>
+            <Stack spacing={4}>
+              <BubbleText
+                text="Versatile"
+                mb={{ base: -8, md: -10 }}
+                alignSelf={"center"}
+              />
+              <BubbleText
+                text="Creative"
+                mb={{ base: -8, md: -10 }}
+                alignSelf={"center"}
+              />
+              <BubbleText text="Visionary" alignSelf={"center"} />
+            </Stack>
             <Text
               textAlign={"center"}
               mx={"auto"}
               fontSize={"xl"}
-              mb={16}
               alignSelf={"end"}
               maxW={"sm"}
+              mb={8}
             >
               EXPLORING BOUNDLESS CREATIVITY, I SOLVE PROBLEMS WITH PASSION,
               FUELED BY DESIGN.
